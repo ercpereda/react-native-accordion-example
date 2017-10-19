@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Accordion from '@ercpereda/react-native-accordion';
 
-const Header = () =>
+const Header = ({ isOpen }) =>
   <View style={{
       paddingTop: 15,
       paddingRight: 15,
@@ -12,11 +12,12 @@ const Header = () =>
       borderBottomColor: '#a9a9a9',
       backgroundColor: '#f9f9f9',
     }}>
-      <Text>Click to Expand</Text>
+      <Text>{`${isOpen ? '-' : '+'} Click to Expand`}</Text>
     </View>;
 
 const Content = (
   <View style={{
+      display: 'flex',
       backgroundColor: '#31363D'
     }}>
       <Text style={{
